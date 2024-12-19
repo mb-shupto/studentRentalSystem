@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Room Rental Service</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #43434d;
+        }
+        header {
+            background-color: #5b5f62;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #43434d;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student House Rental Service</h1>
+    </header>
+    <div class="container">
+        <h2>Find Your Space! </h2>
+        <form id="search-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter Preferred Block/Area">
+
+            
+            <label for="Price Range:">Price Range::</label>
+            
+            <select id="Price Range:" name="Price Range:"  placeholder="Please Select Here!">
+                <option value="3000">3000</option>
+                <option value="3500">3500</option>
+                <option value="4000">4000</option>
+                <option value="4500">4500</option>
+                <option value="5000">5000</option>
+                <option value="5500">5500</option>
+                <option value="6000">6000</option>
+                <option value="6500">6500</option>
+                <option value="7000">7000</option>
+                <option value="7500">7500</option>
+                <option value="8000">8000</option>
+                <option value="8500">8500</option>
+                <option value="9000">9000</option>
+                <option value="9500">9500</option>
+                <option value="10000">10000</option>
+                <option value="11000">11000</option>
+                <option value="12000">12000</option>
+
+            </select>
+            <label for="room-type">Restriction Level:</label>
+            <select id="room-type" name="room-type">
+                <option value="">Any</option>
+                <option value="Restrictionless">Restrictionless</option>
+                <option value="Mediumly Handled">Less Of Restriction</option>
+                <option value="Less Of Restriction">Mediumly Handled</option>
+                <option value="full restricted">Fully restricted
+                </option>
+            </select>
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type">
+                <option value="">Any</option>
+                <option value="single">Single</option>
+                <option value="shared">Shared</option>
+                <option value="partitioned">Partitioned</option>
+                <option value="full">Full House</option>
+            </select>
+            <label>Amenities:</label>
+            <div>
+                <input type="checkbox" id="wifi" name="amenities" value="wifi">
+                <label for="wifi">WiFi</label>
+            </div>
+            <div>
+                <input type="checkbox" id="parking" name="amenities" value="parking">
+                <label for="parking">Parking</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ac" name="amenities" value="ac">
+                <label for="ac">Air Conditioning</label>
+            </div>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const location = document.getElementById('location').value;
+            const priceRange = document.getElementById('price-range').value;
+            const roomType = document.getElementById('room-type').value;
+            const amenities = Array.from(document.querySelectorAll('input[name="amenities"]:checked')).map(cb => cb.value);
+
+            console.log({ location, priceRange, roomType, amenities });
+            alert('Search submitted! Check console for details.');
+        });
+    </script>
+</body>
+</html>
