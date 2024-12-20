@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Room Rental Service</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #312c2c;
+            color: #000000;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        button {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #0056b3, #004494);
+        }
+        .review-form {
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .review-form h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .amenities-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .amenities-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .amenities-options input {
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px 0;
+            background: #f4f4f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Student Room Rental Service
+    </header>
+    <div class="container">
+        <h2>Find Your Room</h2>
+        <form id="search-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter city or area">
+
+            <label for="price-range">Price Range:</label>
+            <input type="text" id="price-range" name="price-range" placeholder="e.g., 300-700">
+
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type">
+                <option value="">Any</option>
+                <option value="single">Single</option>
+                <option value="shared">Shared</option>
+                <option value="full">Full House</option>
+            </select>
+
+            <label>Amenities:</label>
+            <div class="amenities-options">
+                <label><input type="checkbox" id="wifi" name="amenities" value="wifi"> WiFi</label>
+                <label><input type="checkbox" id="parking" name="amenities" value="parking"> Parking</label>
+                <label><input type="checkbox" id="ac" name="amenities" value="ac"> Air Conditioning</label>
+            </div>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <h1>Others</h1>
+
+<p><a href="ReviewUI 1.1.html">Leave Us a Review! </a></p>
+<p><a href="Contact.html">Contact Us </a></p>
+
+</body>
+</html>
+
+
+    
+
+    <footer>
+        &copy; 2024 Student Room Rental Service. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const location = document.getElementById('location').value;
+            const priceRange = document.getElementById('price-range').value;
+            const roomType = document.getElementById('room-type').value;
+            const amenities = Array.from(document.querySelectorAll('input[name="amenities"]:checked')).map(cb => cb.value);
+
+            console.log({ location, priceRange, roomType, amenities });
+            alert('Search submitted! Check console for details.');
+        });
+
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('review-text').value;
+
+            console.log({ rating, reviewText });
+            alert('Thank you for your review!');
+        });
+    </script>
+</body>
+</html>

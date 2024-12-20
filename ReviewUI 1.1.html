@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Room Rental Service</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #43434d;
+            color: #454242;
+        }
+        header {
+            background-color: #5b5f62;
+            color: rgb(201, 168, 168);
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgb(66, 74, 74);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px #4224241a;
+            color: #ffffff;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #1c1a1a;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #43434d;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student House Rental Service</h1>
+    </header>
+    <div class="container">
+       
+
+        <!-- The Review Form -->
+        <div class="review-form">
+            <h3>Leave a Review</h3>
+            <form id="review-form">
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" rows="4" placeholder="Write your review here..."></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript if needed for form handling or interactions
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('review-text').value;
+
+            console.log({ rating, reviewText });
+            alert('Thank you for your review!');
+        });
+    </script>
+</body>
+</html>
